@@ -11,7 +11,7 @@ public class wayFinder {
 
     public void findShortestPath(String startCity, String endCity) {
         if (startCity.equals(endCity)) {
-            System.out.println("Başlangıç ve bitiş şehirleri aynı!");
+            System.out.println("Başlangıç ve bitiş şehirleri aynı");
             return;
         }
 
@@ -19,7 +19,7 @@ public class wayFinder {
         City end = countryMap.getCityByName(endCity);
 
         if (start == null || end == null) {
-            System.out.println("Başlangıç veya bitiş şehri bulunamadı!");
+            System.out.println("Başlangıç veya bitiş şehri bulunamadı");
             return;
         }
 
@@ -73,7 +73,7 @@ public class wayFinder {
     private void printPath(int[] distances, int[] previous, String startCity, String endCity) {
         int endIndex = countryMap.getCityIndex(endCity);
         if (distances[endIndex] == Integer.MAX_VALUE) {
-            System.out.println("Başlangıç ve bitiş şehirleri arasında yol bulunamadı!");
+            System.out.println("Başlangıç ve bitiş şehirleri arasında yol bulunamadı");
             return;
         }
 
