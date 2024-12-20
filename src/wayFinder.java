@@ -60,11 +60,11 @@ public class wayFinder {
 
     private int getNearestCity(int[] distances, boolean[] visited) {
         int minDistance = Integer.MAX_VALUE;
-        int minIndex = -1;
+        int minIndex= -1;
         for (int i = 0; i < distances.length; i++) {
             if (!visited[i] && distances[i] < minDistance) {
                 minDistance = distances[i];
-                minIndex = i;
+                minIndex= i;
             }
         }
         return minIndex;

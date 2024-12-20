@@ -7,25 +7,25 @@ public class countryMap {
     private City[] cities;
 
     public void loadMapFromFile(String fileName) throws IOException {
-        int lineNumber = 0; // Satır numarasını takip etmek için sayaç
+        int lineNumber = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-            // Satır 1: Şehir sayısını oku
+
             lineNumber++;
             cityCount = Integer.parseInt(reader.readLine().trim());
             cities = new City[cityCount];
 
-            // Satır 2: Şehir isimlerini oku
+
             lineNumber++;
             String[] cityNames = reader.readLine().trim().split(" ");
             for (int i = 0; i < cityCount; i++) {
                 cities[i] = new City(cityNames[i]);
             }
 
-            // Satır 3: Yol sayısını oku
+
             lineNumber++;
             int routeCount = Integer.parseInt(reader.readLine().trim());
 
-            // Satır 4 ve sonrası: Bağlantı bilgilerini oku
+
             for (int i = 0; i < routeCount; i++) {
                 lineNumber++;
                 String[] routeInfo = reader.readLine().trim().split(" ");
@@ -41,7 +41,7 @@ public class countryMap {
                 }
             }
 
-            // Dosya başarıyla yüklendi mesajı
+
 
 
         } catch (IOException e) {

@@ -11,13 +11,13 @@ public class City {
         this.connectionCount = 0;
     }
     public int getConnectionCount() {
-        return connectionCount; // Bağlantıların sayısını döndürür
+        return connectionCount;
     }
     public City[] getConnections() {
-        return connections; // Şehre bağlı diğer şehirleri döndürür
+        return connections;
     }
     public int[] getTimes() {
-        return times; // Şehre bağlı diğer şehirlere olan süreleri döndürür
+        return times;
     }
 
     public String getName() {
