@@ -11,7 +11,7 @@ public class wayFinder {
 
     public void findShortestPath(String startCity, String endCity) {
         if (startCity.equals(endCity)) {
-            System.out.println("Başlangıç ve bitiş şehirleri aynı");
+            System.out.println("The start and finish city is same");
             return;
         }
 
@@ -19,7 +19,7 @@ public class wayFinder {
         City end = countryMap.getCityByName(endCity);
 
         if (start == null || end == null) {
-            System.out.println("Başlangıç veya bitiş şehri bulunamadı");
+            System.out.println("The start or finish city couldn't be found");
             return;
         }
 
@@ -73,14 +73,14 @@ public class wayFinder {
     private void printPath(int[] distances, int[] previous, String startCity, String endCity) {
         int endIndex = countryMap.getCityIndex(endCity);
         if (distances[endIndex] == Integer.MAX_VALUE) {
-            System.out.println("Başlangıç ve bitiş şehirleri arasında yol bulunamadı");
+            System.out.println("There is no way between start and finish cities");
             return;
         }
 
         StringBuilder path = new StringBuilder();
         buildPathRecursive(previous, endIndex, path);
-        System.out.println("En kısa yol: " + path);
-        System.out.println("Toplam süre: " + distances[endIndex] + " dakika");
+        System.out.println("Shortest way: " + path);
+        System.out.println("Total time: " + distances[endIndex] + " minute");
 
         writeOutputToFile(path.toString(), distances[endIndex]);
     }
@@ -96,16 +96,12 @@ public class wayFinder {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/output.txt"))) {
             writer.write("Fastest Way: " + path + "\n");
             writer.write("Total Time: " + totalTime + " min\n");
-            System.out.println("Sonuçlar src/output.txt dosyasına yazıldı.");
+            System.out.println("Outputs is wrote to the src/output.txt file");
         } catch (IOException e) {
-            System.out.println("Dosyaya yazma sırasında bir hata oluştu: " + e.getMessage());
+            System.out.println("There is a problem in file writing: " + e.getMessage());
         }
     }
 
 
-    private void printPathRecursive(int[] previous, int index) {
-        if (index == -1) return;
-        printPathRecursive(previous, previous[index]);
-        System.out.print(countryMap.getCityByIndex(index).getName() + " ");
-    }
+
 }

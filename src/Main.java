@@ -7,23 +7,23 @@ public class Main {
         countryMap countryMap = new countryMap();
 
 
-        System.out.println("Lütfen giriş dosyasının adını girin (örneğin: map1.txt): ");
+        System.out.println("Please enter the file name(example: map1.txt): ");
         String fileName = scanner.nextLine();
 
 
         try {
             countryMap.loadMapFromFile(fileName);
-            System.out.println("File read is successful!");
+            System.out.println("File read is successful");
         } catch (IOException e) {
-            System.out.println("Dosya okunurken bir hata oluştu: " + e.getMessage());
+            System.out.println("There is a problem in file reading: " + e.getMessage());
             return;
         }
 
 
-        System.out.println("Başlangıç şehrini girin: ");
+        System.out.println("Enter start city: ");
         String startCity = scanner.nextLine();
 
-        System.out.println("Bitiş şehrini girin: ");
+        System.out.println("Enter finish city: ");
         String endCity = scanner.nextLine();
 
 
