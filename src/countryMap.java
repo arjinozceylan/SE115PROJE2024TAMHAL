@@ -46,7 +46,7 @@ public class countryMap {
 
         } catch (IOException e) {
             System.out.println("Error Line: " + lineNumber + ", error in file");
-            throw e; // Hatayı üst seviyeye iletir
+            throw e;
         } catch (NumberFormatException e) {
             System.out.println("Error Line: " + lineNumber + ", invalid number format");
             throw new IOException("Number format error at line " + lineNumber, e);

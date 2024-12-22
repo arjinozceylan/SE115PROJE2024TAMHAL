@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="SE 115 PROJE 2024 TAM HAL:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/SE_115_PROJE_2024_TAM_HAL_jar</output-path>
+    <output-path>$PROJECT_DIR$/src</output-path>
     <root id="archive" name="SE 115 PROJE 2024 TAM HAL.jar">
       <element id="module-output" name="SE 115 PROJE 2024 TAM HAL" />
     </root>

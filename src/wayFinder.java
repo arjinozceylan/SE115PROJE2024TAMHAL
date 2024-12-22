@@ -93,7 +93,7 @@ public class wayFinder {
     }
 
     private void writeOutputToFile(String path, int totalTime) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/output.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:/Users/Arjin/IdeaProjects/SE 115 PROJE 2024 TAM HAL/src/output.txt"))) {
             writer.write("Fastest Way: " + path + "\n");
             writer.write("Total Time: " + totalTime + " min\n");
             System.out.println("Outputs is wrote to the src/output.txt file");
