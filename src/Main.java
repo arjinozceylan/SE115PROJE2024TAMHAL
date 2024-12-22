@@ -1,30 +1,29 @@
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
+        if (args.length < 3) {
+            System.out.println("Error: Please provide the file name, start city, and end city as command-line arguments.");
+            System.out.println("Usage: java -jar SE115Project.jar <filename> <startCity> <endCity>");
+            return;
+        }
+
+        String fileName = args[0];
+        String startCity = args[1];
+        String endCity = args[2];
+
+
         countryMap countryMap = new countryMap();
-
-
-        System.out.println("Please enter the file name(example: map1.txt): ");
-        String fileName = scanner.nextLine();
 
 
         try {
             countryMap.loadMapFromFile(fileName);
-            System.out.println("File read is successful");
+            System.out.println("File read is successful!");
         } catch (IOException e) {
-            System.out.println("There is a problem in file reading: " + e.getMessage());
+            System.out.println("Error: Could not read the file. " + e.getMessage());
             return;
         }
-
-
-        System.out.println("Enter start city: ");
-        String startCity = scanner.nextLine();
-
-        System.out.println("Enter finish city: ");
-        String endCity = scanner.nextLine();
 
 
         wayFinder wayFinder = new wayFinder(countryMap);
